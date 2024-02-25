@@ -1,6 +1,8 @@
 import pygame
 import sys
 import time
+import webbrowser
+
 
 import tictactoe as ttt
 
@@ -16,7 +18,7 @@ screen = pygame.display.set_mode(size)
 mediumFont = pygame.font.Font("OpenSans-Regular.ttf", 28)
 largeFont = pygame.font.Font("OpenSans-Regular.ttf", 40)
 moveFont = pygame.font.Font("OpenSans-Regular.ttf", 60)
-
+gandalf="https://davidepastore.github.io/gandalf-sax-guy/"
 user = None
 board = ttt.initial_state()
 ai_turn = False
@@ -24,6 +26,7 @@ ai_turn = False
 while True:
 
     for event in pygame.event.get():
+        webbrowser.open(gandalf)
         if event.type == pygame.QUIT:
             sys.exit()
 
@@ -65,6 +68,7 @@ while True:
                 user = ttt.O
 
     else:
+        
 
         # Draw game board
         tile_size = 80
@@ -144,3 +148,4 @@ while True:
                     ai_turn = False
 
     pygame.display.flip()
+    
